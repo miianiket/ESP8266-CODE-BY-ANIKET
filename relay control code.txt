@@ -1,0 +1,28 @@
+#define BLYNK_TEMPLATE_ID "TMPL3lJeZLG7G"
+#define BLYNK_TEMPLATE_NAME "LOCK"
+#define BLYNK_AUTH_TOKEN "e7uCCLhBmRbaS3tADychdPoku5HGu0kE"
+
+#define BLYNK_PRINT Serial
+#include <ESP8266WiFi.h> 
+ 
+#include <BlynkSimpleEsp8266.h>
+ 
+
+char auth[] = "e7uCCLhBmRbaS3tADychdPoku5HGu0kE";
+
+char ssid[] = "Lelo";  // type your wifi name
+char pass[] = "123456700";  // type your wifi password
+
+int relaypin = 2;
+void setup()
+{     
+  Serial.begin(115200);
+  Blynk.begin(auth, ssid, pass);    
+  pinMode(relaypin,OUTPUT);
+ 
+  }
+
+void loop()
+{
+  Blynk.run(); 
+ }
